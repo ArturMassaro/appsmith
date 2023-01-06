@@ -1,0 +1,13 @@
+diff --git a/node_modules/@blueprintjs/popover2/lib/esm/popover2.d.ts b/node_modules/@blueprintjs/popover2/lib/esm/popover2.d.ts
+index dc1196b..75b1654 100644
+--- a/node_modules/@blueprintjs/popover2/lib/esm/popover2.d.ts
++++ b/node_modules/@blueprintjs/popover2/lib/esm/popover2.d.ts
+@@ -56,7 +56,7 @@ export interface IPopover2State {
+ /**
+  * @template T target component props inteface
+  */
+-export declare class Popover2<T> extends AbstractPureComponent2<IPopover2Props<T>, IPopover2State> {
++export declare class Popover2<T> extends AbstractPureComponent2<React.PropsWithChildren<IPopover2Props<T>>, IPopover2State> {
+     static displayName: string;
+     private popoverRef;
+     static defaultProps: IPopover2Props;

@@ -990,6 +990,7 @@ function CameraComponent(props: CameraComponentProps) {
 
   const resetMedia = useCallback(() => {
     setIsReadyPlayerTimer(false);
+    // @ts-expect-error 0 is not a Date; but react-timer-hook expects 0 for reset.
     reset(0, false);
 
     if (mode === CameraModeTypes.CAMERA) {
@@ -1024,7 +1025,7 @@ function CameraComponent(props: CameraComponentProps) {
   }, [webcamRef, mediaRecorderRef]);
 
   const handleDataAvailable = useCallback(
-    ({ data }) => {
+    ({ data }: any) => {
       if (data.size > 0) {
         onRecordingStop(data);
       }
@@ -1039,6 +1040,7 @@ function CameraComponent(props: CameraComponentProps) {
 
   const handleVideoPlay = useCallback(() => {
     if (!isReadyPlayerTimer) {
+      // @ts-expect-error 0 is not a Date; but react-timer-hook expects 0 for reset.
       reset(0, false);
       setIsReadyPlayerTimer(true);
     }

@@ -93,7 +93,7 @@ export function saveResolvedFunctionsAndJSUpdates(
       const actions: any = [];
       const variables: any = [];
       if (!!parsedObject) {
-        parsedObject.forEach((parsedElement) => {
+        parsedObject.forEach((parsedElement: any) => {
           if (isTypeOfFunction(parsedElement.type)) {
             try {
               const { result } = evaluateSync(
@@ -110,7 +110,7 @@ export function saveResolvedFunctionsAndJSUpdates(
 
                 if (parsedElement.arguments) {
                   params = parsedElement.arguments.map(
-                    ({ defaultValue, paramName }) => ({
+                    ({ defaultValue, paramName }: any) => ({
                       key: paramName,
                       value: defaultValue,
                     }),

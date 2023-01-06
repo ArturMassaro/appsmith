@@ -61,6 +61,7 @@ export const getJSFunctionStartLineFromCode = (
     Property(node, ancestors: Node[]) {
       // We are only interested in identifiers at this depth (exported object keys)
       const depth = ancestors.length - 3;
+
       if (
         isPropertyNode(node) &&
         (node.value.type === NodeTypes.ArrowFunctionExpression ||

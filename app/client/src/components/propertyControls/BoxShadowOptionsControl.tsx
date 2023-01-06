@@ -14,7 +14,9 @@ export interface BoxShadowOptionsControlProps extends ControlProps {
   propertyValue: string | undefined;
 }
 
-const options = Object.keys(boxShadowOptions).map((optionKey) => ({
+const options: { icon: JSX.Element; value: string }[] = Object.keys(
+  boxShadowOptions,
+).map((optionKey) => ({
   icon: (
     <TooltipComponent
       content={optionKey}
